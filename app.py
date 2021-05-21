@@ -54,7 +54,7 @@ def mean_weight_height():
                 whole_height += float(row[1])
                 whole_weight += float(row[2])
             count += 1
-        return f'{count} Mean height = {round(whole_height/(count-2)*2.54, 2)} cm. ' \
+        return f'Mean height = {round(whole_height/(count-2)*2.54, 2)} cm. ' \
                f'Mean weight = {round(whole_weight/(count-2)/2.20462, 2)} kg</p> '
 
 
