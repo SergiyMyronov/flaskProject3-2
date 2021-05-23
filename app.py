@@ -22,15 +22,10 @@ def content_of_requirements():
 
 @app.route('/generate-users/')
 def generate_users():
-    number_of_users = request.args.get('users')
+    number_of_users = request.args.get('users', 100, int)
 
-    if number_of_users:
-        if number_of_users.isdigit():
-            number_of_users = min(int(number_of_users), 200)
-        else:
-            number_of_users = 100
-    else:
-        number_of_users = 100
+    if number_of_users > 200:
+        number_of_users = 200
 
     fake = Faker()
     text = ''
